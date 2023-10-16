@@ -10,10 +10,10 @@ const title = "LinkedIn Bio Generator";
 const description = "Generate your next LinkedIn bio in seconds.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://linkedinbio.io"),
+  metadataBase: new URL("https://linkedin-bio-generator-blue.vercel.app/"),
   title,
   description,
-  openGraph: {
+  openGraph: { 
     title,
     description,
     locale: "en_US",
