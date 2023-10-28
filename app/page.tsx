@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { useChat } from "ai/react";
 import { MoveRight, Loader2 } from "lucide-react";
-import { useRef } from "react";
+import { FormEvent, useRef } from "react";
 import {
   Form,
   FormControl,
@@ -16,7 +16,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { NumberIcon } from "@/components/NumberIcon";
@@ -100,6 +100,7 @@ export default function Home() {
   });
 
   const onSubmit = (e: any) => {
+    console.log(e);
     handleSubmit(e);
   };
 
@@ -115,7 +116,10 @@ export default function Home() {
           Generate your next LinkedIn bio using ChatGPT
         </h1>
         <Form {...form}>
-          <form onSubmit={onSubmit} className="max-w-xl w-full space-y-8 mt-10">
+          <form
+            onSubmit={form.handleSubmit((_, e) => onSubmit(e))}
+            className="max-w-xl w-full space-y-8 mt-10"
+          >
             {formFields.map(({ name, label, placeholder }, index) => (
               <FormField
                 key={name}
