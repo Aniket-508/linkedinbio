@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { useChat } from "ai/react";
 import { MoveRight, Loader2 } from "lucide-react";
-import { FormEvent, useRef } from "react";
+import { useRef } from "react";
 import {
   Form,
   FormControl,
@@ -16,7 +16,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { NumberIcon } from "@/components/NumberIcon";
